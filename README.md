@@ -18,7 +18,7 @@ $ export GIST_TOKEN=****************************************
 # Cвязываем команду edit с вызовом текстового редактора vim
 $ alias edit=vim
 ```
-Создание рабочей директории workspace для дальнейшей работы.
+Создаем рабочую директории workspace для дальнейшей работы.
 ```ShellSession
 # Cоздаем директорию со вложенной папкой workspace
 $ mkdir -p ${GITHUB_USERNAME}/workspace
@@ -56,24 +56,26 @@ $ mv node-v6.11.5-linux-x64 node
 ```
 Просматриваем содержимое каталога node/bin, добавляем директорию с nodejs в переменную PATH для работы в терминале.
 ```ShellSession
-# Просмотр содержимого каталога node/bin
+# Просматриваем содержимое каталога node/bin
 $ ls node/bin
 node npm
 # Выводим список директорий, где терминал ищет исполняемые файлы
 $ echo ${PATH}
-/home/kristina/bin:/home/kristina/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-# Добавление к переменной PATH пути до бинарных файлов nodejs
+/home/kristina/bin:/home/kristina/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/
+games:/usr/local/games:/snap/bin
+# Добавляем к переменной PATH пути до бинарных файлов nodejs
 $ export PATH=${PATH}:`pwd`/node/bin
 # Снова выводим список
 $ echo ${PATH}
-/home/kristina/bin:/home/kristina/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/kristina/Ais105/workspace/node/bin
-# Создание каталога scripts
+/home/kristina/bin:/home/kristina/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:
+/usr/local/games:/snap/bin:/home/kristina/Ais105/workspace/node/bin
+# Создаем каталог scripts
 $ mkdir scripts
-# Создание файла activate в этом каталоге
+# Создаем файл activate в этом каталоге
 $ cat > scripts/activate<<EOF
 export PATH=\${PATH}:`pwd`/node/bin
 EOF
-# Исполнение содержимого файла как набора команд
+# Производим исполнение содержимого файла как набора команд
 $ source scripts/activate
 ```
 Устанавливаем gistup для создания gist из терминала.
@@ -94,7 +96,7 @@ gistup gistup-open gistup-rename node npm
 ```
 Создаем файл .gistup.json, где будет находиться gist token.
 ```ShellSession
-# Создание файла .gistup.json, где находится gist token
+# Создаем файл .gistup.json, где находится gist token
 $ cat > ~/.gistup.json <<EOF
 {
   "token": "${GIST_TOKEN}"
@@ -105,19 +107,19 @@ EOF
 ## Report
 
 ```ShellSession
-# Добавление переменной с номером лабораторной работы
+# Добавляем переменную с номером лабораторной работы
 $ export LAB_NUMBER=01
-# Клонирование репозитория в директорию tasks/lab01
+# Клонируем репозиторию в директорию tasks/lab01
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
-# Создание директории
+# Создаем директорию
 $ mkdir reports/lab${LAB_NUMBER}
-# Копирование файла в созданную директорию
+# Копируем файл в созданную директорию
 $ cp tasks/lab${LAB_NUMBER}/README.md reports/lab${LAB_NUMBER}/REPORT.md
-# Переход в каталог reports/lab01
+# Переходим в каталог reports/lab01
 $ cd reports/lab${LAB_NUMBER}
-# Редактирование файла 
+# Редактируем файл 
 $ edit REPORT.md
-# Создание gist 
+# Создаем gist 
 $ gistup -m "lab${LAB_NUMBER}" # enter: yes↵
 ```
 
