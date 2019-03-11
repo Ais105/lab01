@@ -61,14 +61,14 @@ $ ls node/bin
 node npm
 # Выводим список директорий, где терминал ищет исполняемые файлы
 $ echo ${PATH}
-/home/kristina/bin:/home/kristina/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/
-games:/usr/local/games:/snap/bin
+/home/kristina/bin:/home/kristina/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:
+/bin:/usr/games:/usr/local/games:/snap/bin
 # Добавляем к переменной PATH пути до бинарных файлов nodejs
 $ export PATH=${PATH}:`pwd`/node/bin
 # Снова выводим список
 $ echo ${PATH}
-/home/kristina/bin:/home/kristina/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:
-/usr/local/games:/snap/bin:/home/kristina/Ais105/workspace/node/bin
+/home/kristina/bin:/home/kristina/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/
+sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/kristina/Ais105/workspace/node/bin
 # Создаем каталог scripts
 $ mkdir scripts
 # Создаем файл activate в этом каталоге
@@ -82,7 +82,8 @@ $ source scripts/activate
 ```ShellSession
 # Устанавливаем gistup при помощи npm
 $ npm install -g gistup
-/home/kristina/Ais105/workspace/node/bin/gistup -> /home/kristina/Ais105/workspace/node/lib/node_modules/gistup/bin/gistup
+/home/kristina/Ais105/workspace/node/bin/gistup -> /home/kristina/Ais105/workspace/node/lib
+/node_modules/gistup/bin/gistup
 /home/kristina/Ais105/workspace/node/bin/gistup-open -> /home/kristina/Ais105/workspace/node/lib/node_modules/gistup/bin/gistup-open
 /home/kristina/Ais105/workspace/node/bin/gistup-rename -> /home/kristina/Ais105/workspace/node/lib/node_modules/gistup/bin/gistup-rename
 /home/kristina/Ais105/workspace/node/lib
