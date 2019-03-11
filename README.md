@@ -165,6 +165,77 @@ $ gistup -m "lab${LAB_NUMBER}" # enter: yes↵
 - [tree](https://linux.die.net/man/1/tree)
 - [vim](http://www.vim.org)
 
+### Homework
+
+1. Скачайте библиотеку boost с помощью утилиты wget. Адрес для скачивания https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz.
+```ShellSession
+$ wget https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz #скачиваем архив
+```
+2. Разархивируйте скачанный файл в директорию ~/boost_1_69_0
+```ShellSession
+$ tar -xf boost_1_69_0.tar.gz # распаковываем архив
+$ rm -rf boost_1_69_0.tar.gz # удаляем архив
+$ cd boost_1_69_0 # переходим в каталог с *boost*
+```
+3. Подсчитайте количество файлов в директории ~/boost_1_69_0 не включая вложенные директории.
+```ShellSession
+$ ls -f . | wc -l
+20
+```
+4. Подсчитайте количество файлов в директории ~/boost_1_69_0 включая вложенные директории.
+```ShellSession
+$ find . -type f | wc -l
+61192
+```
+5. Подсчитайте количество заголовочных файлов, файлов с расширением .cpp, сколько остальных файлов (не заголовочных и не .cpp).
+```ShellSession
+$ find . -type f -name '*.h' | wc -l
+296
+$ find . -type f -name '*.cpp' | wc -l
+13774
+$ find . -type f '!' -name '*.cpp' -a '!' -name '*.h' | wc -l
+47121
+```
+6. Найдите полный пусть до файла any.hpp внутри библиотеки boost.
+```ShellSession
+$ find . -type f -name 'any.hpp'
+./boost/type_erasure/any.hpp
+./boost/proto/detail/any.hpp
+./boost/fusion/algorithm/query/detail/any.hpp
+./boost/fusion/algorithm/query/any.hpp
+./boost/fusion/include/any.hpp
+./boost/xpressive/detail/utility/any.hpp
+./boost/hana/fwd/any.hpp
+./boost/hana/any.hpp
+./boost/spirit/home/support/algorithm/any.hpp
+./boost/any.hpp
+```
+7. Выведите в консоль все файлы, где упоминается последовательность boost::asio.
+```ShellSession
+$ grep -lr 'boost::asio' 
+boost/asio/read_at.hpp
+...
+libs/coroutine/doc/motivation.qbk
+```
+8. Скомпилирутйе boost. Можно воспользоваться инструкцией или ссылкой.
+```ShellSession
+# prefix указывает в какой папке будут скомпилированы библиотеки и include файлы
+$ ./bootstrap.sh --prefix=boost_output 
+$ ./b2 install
+```
+9. Перенесите все скомпилированные на предыдущем шаге статические библиотеки в директорию ~/boost-libs.
+```ShellSession
+$ cd ..
+$ mv boost_1_69_0/boost_output boost-libs
+```
+10. Подсчитайте сколько занимает дискового пространства каждый файл в этой директории.
+```ShellSession
+$ du -h
+```
+11. Найдите топ10 самых "тяжёлых".
+```ShellSession
+$ find .  -type f -exec du -sh {} 2>/dev/null + | sort -rh | head -n 10
 ```
 Copyright (c) 2015-2019 The ISC Authors
-```
+
+
