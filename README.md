@@ -84,8 +84,10 @@ $ source scripts/activate
 $ npm install -g gistup
 /home/kristina/Ais105/workspace/node/bin/gistup -> /home/kristina/Ais105/workspace/node/lib
 /node_modules/gistup/bin/gistup
-/home/kristina/Ais105/workspace/node/bin/gistup-open -> /home/kristina/Ais105/workspace/node/lib/node_modules/gistup/bin/gistup-open
-/home/kristina/Ais105/workspace/node/bin/gistup-rename -> /home/kristina/Ais105/workspace/node/lib/node_modules/gistup/bin/gistup-rename
+/home/kristina/Ais105/workspace/node/bin/gistup-open ->
+/home/kristina/Ais105/workspace/node/lib/node_modules/gistup/bin/gistup-open
+/home/kristina/Ais105/workspace/node/bin/gistup-rename ->
+/home/kristina/Ais105/workspace/node/lib/node_modules/gistup/bin/gistup-rename
 /home/kristina/Ais105/workspace/node/lib
 └─┬ gistup@0.1.3 
 ├─┬ optimist@0.3.7 
