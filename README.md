@@ -9,7 +9,7 @@
 - [x] 3. Составить отчет и отправить ссылку личным сообщением в **Slack**
 
 ## Tutorial
-
+Добавляем переменные окружения GITHUB_USERNAME и GIST_TOKEN, связываем команду edit с текстовым редактором.
 ```bash
 # Присваиваем переменной GITHUB_USERNAME свое имя пользователя на Github  
 $ export GITHUB_USERNAME=Ais105
@@ -18,7 +18,7 @@ $ export GIST_TOKEN=****************************************
 # Cвязываем команду edit с вызовом текстового редактора vim
 $ alias edit=vim
 ```
-
+Создание рабочей директории workspace для дальнейшей работы.
 ```ShellSession
 # Cоздаем директорию со вложенной папкой workspace
 $ mkdir -p ${GITHUB_USERNAME}/workspace
@@ -33,16 +33,16 @@ $ cd ..
 $ pwd
 /home/kristina/Ais105
 ```
-
+Создаем подкаталоги в директории workspace.
 ```ShellSession
-# Создание дочерних директорий в каталоге workspace
+# Создаем дочерние директории в каталоге workspace
 $ mkdir -p workspace/tasks/
 $ mkdir -p workspace/projects/
 $ mkdir -p workspace/reports/
 # Переходим к каталогу workspace
 $ cd workspace
 ```
-
+Устанавливаем nodejs в рабочую директорию для дальнейшей работы.
 ```ShellSession
 # Ubuntu
 # Скачиваем архив с последней версией nodejs
@@ -54,7 +54,7 @@ $ rm -rf node-v6.11.5-linux-x64.tar.xz
 # Переименовываем каталог
 $ mv node-v6.11.5-linux-x64 node
 ```
-
+Просматриваем содержимое каталога node/bin, добавляем директорию с nodejs в переменную PATH для работы в терминале.
 ```ShellSession
 # Просмотр содержимого каталога node/bin
 $ ls node/bin
@@ -76,7 +76,7 @@ EOF
 # Исполнение содержимого файла как набора команд
 $ source scripts/activate
 ```
-
+Устанавливаем gistup для создания gist из терминала.
 ```ShellSession
 # Устанавливаем gistup при помощи npm
 $ npm install -g gistup
@@ -92,7 +92,7 @@ $ npm install -g gistup
 $ ls node/bin
 gistup gistup-open gistup-rename node npm
 ```
-
+Создаем файл .gistup.json, где будет находиться gist token.
 ```ShellSession
 # Создание файла .gistup.json, где находится gist token
 $ cat > ~/.gistup.json <<EOF
